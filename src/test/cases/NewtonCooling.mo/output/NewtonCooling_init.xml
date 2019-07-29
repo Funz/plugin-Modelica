@@ -1,0 +1,163 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+
+<!-- description of the model interface using an extention of the FMI standard -->
+<fmiModelDescription
+  fmiVersion                          = "1.0"
+
+  modelName                           = "NewtonCooling"
+  modelIdentifier                     = "NewtonCooling"
+
+  OPENMODELICAHOME                    = "/usr"
+
+  guid                                = "{2c682856-f70c-4bd9-a6d3-2d10ee07915c}"
+
+  description                         = "An example of Newton&#39;s law of cooling"
+  generationTool                      = "OpenModelica Compiler OpenModelica 1.12.0~4-g83bba97"
+  generationDateAndTime               = "2019-07-29T09:26:46Z"
+
+  variableNamingConvention            = "structured"
+
+  numberOfEventIndicators             = "0"  cmt_numberOfEventIndicators             = "NG:       number of zero crossings,                           FMI"
+  numberOfTimeEvents                  = "0"  cmt_numberOfTimeEvents                  = "NG_SAM:   number of zero crossings that are samples,          OMC"
+
+  numberOfInputVariables              = "0"  cmt_numberOfInputVariables              = "NI:       number of inputvar on topmodel,                     OMC"
+  numberOfOutputVariables             = "0"  cmt_numberOfOutputVariables             = "NO:       number of outputvar on topmodel,                    OMC"
+
+  numberOfExternalObjects             = "0"  cmt_numberOfExternalObjects             = "NEXT:     number of external objects,                         OMC"
+  numberOfFunctions                   = "0"  cmt_numberOfFunctions                   = "NFUNC:    number of functions used by the simulation,         OMC"
+
+  numberOfContinuousStates            = "1"  cmt_numberOfContinuousStates            = "NX:       number of states,                                   FMI"
+  numberOfRealAlgebraicVariables      = "0"  cmt_numberOfRealAlgebraicVariables      = "NY:       number of real variables,                           OMC"
+  numberOfRealAlgebraicAliasVariables = "0"  cmt_numberOfRealAlgebraicAliasVariables = "NA:       number of alias variables,                          OMC"
+  numberOfRealParameters              = "6"  cmt_numberOfRealParameters              = "NP:       number of parameters,                               OMC"
+
+  numberOfIntegerAlgebraicVariables   = "0"  cmt_numberOfIntegerAlgebraicVariables   = "NYINT:    number of alg. int variables,                       OMC"
+  numberOfIntegerAliasVariables       = "0"  cmt_numberOfIntegerAliasVariables       = "NAINT:    number of alias int variables,                      OMC"
+  numberOfIntegerParameters           = "0"  cmt_numberOfIntegerParameters           = "NPINT:    number of int parameters,                           OMC"
+
+  numberOfStringAlgebraicVariables    = "0"  cmt_numberOfStringAlgebraicVariables    = "NYSTR:    number of alg. string variables,                    OMC"
+  numberOfStringAliasVariables        = "0"  cmt_numberOfStringAliasVariables        = "NASTR:    number of alias string variables,                   OMC"
+  numberOfStringParameters            = "0"  cmt_numberOfStringParameters            = "NPSTR:    number of string parameters,                        OMC"
+
+  numberOfBooleanAlgebraicVariables   = "0"  cmt_numberOfBooleanAlgebraicVariables   = "NYBOOL:   number of alg. bool variables,                      OMC"
+  numberOfBooleanAliasVariables       = "0"  cmt_numberOfBooleanAliasVariables       = "NABOOL:   number of alias bool variables,                     OMC"
+  numberOfBooleanParameters           = "0"  cmt_numberOfBooleanParameters           = "NPBOOL:   number of bool parameters,                          OMC" >
+
+
+  <!-- startTime, stopTime, tolerance are FMI specific, all others are OMC specific -->
+  <DefaultExperiment
+    startTime      = "0"
+    stopTime       = "1"
+    stepSize       = "0.002"
+    tolerance      = "0.001"
+    solver        = "dassl"
+    outputFormat      = "csv"
+    variableFilter      = ".*" />
+
+  <!-- variables in the model -->
+  <ModelVariables>
+
+  <ScalarVariable
+    name = "T"
+    valueReference = "1000"
+    description = "Temperature"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "0" classType = "rSta"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "9" startColumn = "3" endLine = "9" endColumn = "23" fileWritable = "true">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "der(T)"
+    valueReference = "1001"
+    description = "der(Temperature)"
+    variability = "continuous" isDiscrete = "false"
+    causality = "internal" isValueChangeable = "false"
+    alias = "noAlias"
+    classIndex = "0" classType = "rDer"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "9" startColumn = "3" endLine = "9" endColumn = "23" fileWritable = "true">
+    <Real fixed="false" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "A"
+    valueReference = "1002"
+    description = "Surface area"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "0" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "6" startColumn = "3" endLine = "6" endColumn = "38" fileWritable = "true">
+    <Real start="1.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T0"
+    valueReference = "1003"
+    description = "Initial temperature"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "1" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "4" startColumn = "3" endLine = "4" endColumn = "45" fileWritable = "true">
+    <Real start="90.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "T_inf"
+    valueReference = "1004"
+    description = "Ambient temperature"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "2" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "3" startColumn = "3" endLine = "3" endColumn = "48" fileWritable = "true">
+    <Real start="25.0" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "c_p"
+    valueReference = "1005"
+    description = "Specific heat"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "3" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "8" startColumn = "3" endLine = "8" endColumn = "41" fileWritable = "true">
+    <Real start="1.2" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "h"
+    valueReference = "1006"
+    description = "Convective cooling coefficient"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "4" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "5" startColumn = "3" endLine = "5" endColumn = "56" fileWritable = "true">
+    <Real start="0.5" fixed="true" useNominal="false" />
+  </ScalarVariable>
+  <ScalarVariable
+    name = "m"
+    valueReference = "1007"
+    description = "Mass of thermal capacitance"
+    variability = "parameter" isDiscrete = "true"
+    causality = "internal" isValueChangeable = "true"
+    alias = "noAlias"
+    classIndex = "5" classType = "rPar"
+    isProtected = "false" hideResult = "false"
+    fileName = "/tmp/funz/snc-23/39419/spool/NewtonCooling.mo" startLine = "7" startColumn = "3" endLine = "7" endColumn = "53" fileWritable = "true">
+    <Real start="0.1" fixed="true" useNominal="false" />
+  </ScalarVariable>
+
+
+
+  </ModelVariables>
+
+
+</fmiModelDescription>
+

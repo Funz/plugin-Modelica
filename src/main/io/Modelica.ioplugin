@@ -1,0 +1,15 @@
+variableStartSymbol=$
+variableLimit=(...)
+formulaStartSymbol=@
+formulaLimit={...}
+commentLineChar=*
+
+datasetFilter=contains("(.*)","model") && contains("(.*)","parameter") && contains("(.*)","equation")
+
+outputlist=time `grep("(.*)\\.mo(.*)","^(\\s*)Real")>>trim()>>cut("\\s",2)`
+
+output.???.get=lines("(.*)_res.csv")>>CSV(",","???")>>asNumeric1DArray()
+
+output.time.if=true
+output.time.get=lines("(.*)_res.csv")>>CSV(",","time")
+output.time.default=1:10

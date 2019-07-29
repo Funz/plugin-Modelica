@@ -1,0 +1,19 @@
+{"format":"Transformational debugger info","version":1,
+"info":{"name":"NewtonCooling","description":"An example of Newton's law of cooling"},
+"variables":{
+"T":{"comment":"Temperature","kind":"state","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":9,"lineEnd":9,"colStart":3,"colEnd":23},"within":["Real"]}},
+"der(T)":{"comment":"der(Temperature)","kind":"derivative","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":9,"lineEnd":9,"colStart":3,"colEnd":23},"within":["Real"]}},
+"A":{"comment":"Surface area","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":6,"lineEnd":6,"colStart":3,"colEnd":38},"within":["Real"]}},
+"T_inf":{"comment":"Ambient temperature","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":3,"lineEnd":3,"colStart":3,"colEnd":48},"within":["Real"]}},
+"c_p":{"comment":"Specific heat","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":8,"lineEnd":8,"colStart":3,"colEnd":41},"within":["Real"]}},
+"h":{"comment":"Convective cooling coefficient","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":5,"lineEnd":5,"colStart":3,"colEnd":56},"within":["Real"]}},
+"m":{"comment":"Mass of thermal capacitance","kind":"parameter","type":"Real","unit":"","displayUnit":"","source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":7,"lineEnd":7,"colStart":3,"colEnd":53},"within":["Real"]}}
+},
+"equations":[{"eqIndex":0,"tag":"dummy"},
+{"eqIndex":1,"section":"initial","tag":"assign","defines":["T"],"uses":["T0"],"equation":["T0"],"source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":11,"lineEnd":11,"colStart":3,"colEnd":39},"within":["NewtonCooling"]}},
+{"eqIndex":2,"section":"initial","tag":"assign","defines":["der(T)"],"uses":["c_p","m","T","T_inf","A","h"],"equation":["DIVISION(h * A * (T_inf - T), m * c_p)"],"source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":13,"lineEnd":13,"colStart":3,"colEnd":57},"within":["NewtonCooling"]}},
+{"eqIndex":3,"section":"regular","tag":"assign","defines":["der(T)"],"uses":["c_p","m","T","T_inf","A","h"],"equation":["DIVISION(h * A * (T_inf - T), m * c_p)"],"source":{"info":{"file":"/tmp/funz/snc-23/39419/spool/NewtonCooling.mo","lineStart":13,"lineEnd":13,"colStart":3,"colEnd":57},"within":["NewtonCooling"]}}
+],
+"functions":[
+]
+}
