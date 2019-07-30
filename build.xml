@@ -2,7 +2,7 @@
 
     <property name="code.name" value="Modelica" />
 
-    <property name="funz.version" value="1.9" />
+    <property name="funz.release" value="v1.9" />
 
     <property name="build_plugin.xml" location="../funz-profile/build_plugin.xml" />
     <import file="${build_plugin.xml}"/>
