@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/Funz/plugin-Modelica.png)](https://travis-ci.org/Funz/plugin-Modelica)
+[![.github/workflows/ant.yml](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml/badge.svg)](https://github.com/Funz/plugin-Modelica/actions/workflows/ant.yml)
+
 
 # Funz plugin: Modelica
 
